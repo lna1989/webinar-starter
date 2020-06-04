@@ -1,3 +1,4 @@
+require('dotenv').config()
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -25,6 +26,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/app.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -46,7 +48,19 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/apollo-module
+    '@nuxtjs/apollo',
   ],
+  /*
+* Apollo
+ */
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.APOLLO_HTTP_END_POINT
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -60,8 +74,11 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
+        light: {
+          primary: '#242424'
+        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
