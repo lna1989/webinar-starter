@@ -17,7 +17,7 @@
     "@nuxtjs/proxy": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "graphql-tag": "^2.10.3",
-    "nuxt": "^2.0.0"
+    "nuxt": "^3.4.3"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"
